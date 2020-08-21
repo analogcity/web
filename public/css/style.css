@@ -213,6 +213,10 @@ background-repeat: no-repeat;
 background-position: 75% 0%;
 }
 
+.green {
+    color: rgb(156, 238, 156);
+}
+
 #i {
 background-image: url("/img/boards/i.jpg");
 }
