@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Turret+Road:400,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+
+  <title>AnalogCity</title>
+</head>
+
+<body>
+  <div id="hi-screen" class="flex">
+    <div id="board-info">
+      <a href="/">
+        <div id="{{ board }}" class="image-square board-img"></div>
+      </a>
+      <div id="board-feed" class="text-square">
+        {% if threads is empty %}
+        <h1>No threads have been found</h1>
+        {% else %}
+        {# <h1>threads</h1> #}
+        <table>
+          {% for thread in threads %}
+          <tr>
+            <td>{{ thread.author }}</td>
+            <td>&ensp;&Proportion;&ensp;</td>
+            <td><a href="/?p=thread&n={{ thread.num }}&b={{ board }}">{{ thread.title }}</a></td>
+            <td class="space"></td>
+            <td>No. replys</td>
+            <td>&ensp;&Proportion;&ensp;</td>
+            <td>{{ thread.n_replys }}</td>
+            <td class="space"></td>
+            <td>Last bump&ensp;&Proportion;&ensp;<b>{{ thread.last_rp }}</b></td>
+            <td class="space"></td>
+            <td>Creation&ensp;&Proportion;&ensp;<b>{{ thread.creation }}</b></td>
+          </tr>
+          {% endfor %}
+        </table>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
