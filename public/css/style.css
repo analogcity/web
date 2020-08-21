@@ -213,25 +213,28 @@ background-repeat: no-repeat;
 background-position: 75% 0%;
 }
 
-#g {
-background-image: url("/img/boards/g.jpg");
-
+#i {
+background-image: url("/img/boards/i.jpg");
 }
 #m {
 background-image: url("/img/boards/m.jpg");
 background-position: 0% 55%;
 }
 
-#pag {
-background-image: url("/img/boards/pag.jpg");
+#b {
+background-image: url("/img/boards/b.jpg");
 }
 
-#diy{
-background-image: url("/img/boards/diy.jpg");
+#c{
+background-image: url("/img/boards/c.jpg");
 background-position: 0% 55%;
 }
 
-marquee {
+#h{
+background-image: url("/img/boards/h.jpg");
+background-position: 0% 55%;
+}
+rquee {
 color: #254255;
 font-weight: 800;
 font-size: 12px;
