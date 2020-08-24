@@ -15,8 +15,9 @@ class Thread
   public $creation;
   public $last_rp;
   public $n_replys;
+  public $pinned;
 
-  public function __construct($a, $t, $c, $i, $num, $creation, $last_rp, $n_replys)
+  public function __construct($a, $t, $c, $i, $num, $creation, $last_rp, $n_replys, $pinned)
   {
     $this->author = $a;
     $this->title = $t;
@@ -26,6 +27,7 @@ class Thread
     $this->last_rp = $last_rp;
     $this->creation = $creation;
     $this->n_replys = $n_replys;
+    $this->pinned = $pinned;
   }
 
   static public function from_database_row($row)
@@ -38,7 +40,8 @@ class Thread
       $row['id'],
       $row['creation'],
       $row['last_rp'],
-      $row['replays']
+      $row['replays'],
+      $row['pinned']
     );
   }
 

@@ -27,7 +27,11 @@
           <tr>
             <td>{{ thread.author }}</td>
             <td>&ensp;&Proportion;&ensp;</td>
+            {% if thread.pinned == 1 %}
+            <td><a class="pinned" href="/?p=thread&n={{ thread.num }}&b={{ board }}">{{ thread.title }}</a></td>
+            {% else %}
             <td><a href="/?p=thread&n={{ thread.num }}&b={{ board }}">{{ thread.title }}</a></td>
+            {% endif %}
             <td class="space"></td>
             <td>No. replys</td>
             <td>&ensp;&Proportion;&ensp;</td>

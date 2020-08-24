@@ -24,6 +24,10 @@ color: #ff99c8;
 font-weight: 800;
 }
 
+a.pinned {
+    color: #90d7ff;
+}
+
 .flex {
 display: flex;
 }
