@@ -131,6 +131,8 @@ padding: 8px;
 flex: 1;
 padding: 64px 64px;
 text-align: center;
+max-height: 60%;
+overflow-y: scroll;
 }
 
 #board-feed > table {
