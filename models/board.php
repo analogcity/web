@@ -3,7 +3,7 @@
 class Board
 {
     const BOARDS_QUERY = "SELECT link, name, description FROM board";
-    const THREADS_IN_BOARD_QUERY = "SELECT id, title, author, comment, image_link, creation, last_rp, replays, pinned FROM thread WHERE table_id = (SELECT id FROM board WHERE link = ?) ORDER BY pinned DESC,last_rp DESC LIMIT 25";
+    const THREADS_IN_BOARD_QUERY = "SELECT id, title, author, comment, creation, last_rp, replies, pinned FROM thread WHERE table_id = (SELECT id FROM board WHERE link = ?) ORDER BY pinned DESC,last_rp DESC LIMIT 25";
 
     public $link;
     public $name;

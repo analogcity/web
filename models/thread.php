@@ -3,30 +3,28 @@
 class Thread
 {
 
-  const OP_QUERY = "SELECT id, title, author, comment, image_link, creation FROM thread WHERE id = ? LIMIT 1";
-  const POSTS_QUERY = "SELECT id, author, comment, image_link, creation FROM post WHERE thread_id = ? ORDER BY creation";
+  const OP_QUERY = "SELECT id, title, author, comment, creation FROM thread WHERE id = ? LIMIT 1";
+  const POSTS_QUERY = "SELECT id, author, comment, creation FROM post WHERE thread_id = ? ORDER BY creation";
 
 
   public $author = "";
   public $title = "";
   public $comment = "";
-  public $imge_link = "";
   public $num = -1;
   public $creation;
   public $last_rp;
-  public $n_replys;
+  public $n_replies;
   public $pinned;
 
-  public function __construct($a, $t, $c, $i, $num, $creation, $last_rp, $n_replys, $pinned)
+  public function __construct($a, $t, $c, $num, $creation, $last_rp, $n_replies, $pinned)
   {
     $this->author = $a;
     $this->title = $t;
     $this->comment = $c;
-    $this->imge_link = $i;
     $this->num = $num;
     $this->last_rp = $last_rp;
     $this->creation = $creation;
-    $this->n_replys = $n_replys;
+    $this->n_replies = $n_replies;
     $this->pinned = $pinned;
   }
 
@@ -36,11 +34,10 @@ class Thread
       $row['author'],
       $row['title'],
       $row['comment'],
-      $row['image_link'],
       $row['id'],
       $row['creation'],
       $row['last_rp'],
-      $row['replays'],
+      $row['replies'],
       $row['pinned']
     );
   }
@@ -84,7 +81,7 @@ class Thread
     if (!$ok) {
       if (DEBUG) {
         echo var_dump($db);
-        die('querry error on get_posts_in_thread');
+        die('query error on get_posts_in_thread');
       } else {
         redirect(FOUR_O_FOUR);
       }
